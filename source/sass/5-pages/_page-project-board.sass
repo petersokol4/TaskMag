@@ -1,0 +1,737 @@
+/*Project List Styling */
+
+#listsContentAjax p
+  word-break: break-word
+
+img.profile
+  border: 2px solid $white
+
+.projectListBox
+  padding-top: 40px
+
+.projectListItem
+  margin-bottom: 10px
+  min-height: 90px
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.16)
+  background-color: $white
+  border-radius: 5px
+
+.projectBox
+  padding: 18px 10px
+  position: relative
+
+.projectIcon
+  height: 54px
+  width: 54px
+  background-color: $dark-gray
+
+/*  Navbar */
+
+.navbarBox
+  padding: .5rem 1rem
+  background-color: $primary
+  color: $white
+  height: 62px
+  z-index: 100
+  box-shadow: 5px 0 10px rgba(0, 0, 0, 0.5)
+
+  a
+    color: $white
+
+a.dropdown-item
+  color: $dark-gray
+
+.projectShowDescription
+  position: absolute
+  bottom: 6px
+  cursor: pointer
+  left: 50%
+
+.badge.up
+  top: -10px
+  position: relative
+  margin-left: -6px
+  font-size: 10px
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.16)
+
+.nano-content
+  padding-right: 15px
+
+/*project arrow */
+i
+  border: solid black
+  border-width: 0 2px 2px 0
+  display: inline-block
+  padding: 3px
+
+i.arrow.down
+  transform: rotate(45deg)
+
+i.arrow.up
+  transform: rotate(-135deg)
+
+#newProjectM
+  position: fixed
+  bottom: 15px
+  right: 15px
+  border-radius: 50%
+  background-color: $primary
+  width: 60px
+  height: 60px
+  font-size: 10px
+  line-height: 12px
+  padding: 5px
+  margin: auto
+
+.relative
+  display: flex
+  // make us of Flexbox
+  align-items: center
+  // does vertically center the desired content
+  justify-content: center
+  // horizontally centers single line items
+  text-align: center
+// optional, but helps horizontally center text that breaks into multiple lines
+
+
+#headlineBox
+  padding: 30px 15px 0 15px
+
+.breadcrumb
+  background: transparent
+  padding-left: 0
+  padding-right: 0
+  padding-bottom: 0
+  margin-bottom: 0
+
+/* mobile side menu */
+#mobileSideMenuBg
+  background-color: rgba(0, 0, 0, 0.8)
+  position: fixed
+  top: 0
+  left: 0
+  width: 100vw
+  min-height: 100vh
+  z-index: 9999
+  visibility: hidden
+  transition: 0.5s ease-in
+
+#mobileSideMenu
+  position: fixed
+  overflow: auto
+  background-color: $white
+  top: 0
+  left: -100vw
+  width: 75vw
+  min-height: 100vh
+  z-index: 10000
+  transition: 0.8s ease
+  ul
+    height: calc(100vh - 62px)
+
+#mainSidebar
+  background-color: $white
+  transition: all 1s ease     //TODO toto môže robiť problém
+  width: 200px
+  margin-top: 62px
+  position: fixed
+  overflow: auto
+  min-height: 100vh
+  top: 0
+  left: 0
+  box-shadow: 1px 0 20px rgba(0, 0, 0, 0.08)
+  z-index: 1
+
+#sidebarNav ul
+  padding-bottom: 60px
+
+//.sidebarFooter
+//  position: fixed
+//  z-index: 10
+//  bottom: 0
+//  left: 0
+//  width: 200px
+//  border-top: 1px solid rgba(120, 130, 140, 0.13)
+//  height: 50px
+//  background-color: $medium-gray
+
+.sidebarBox
+  position: absolute
+  overflow: auto
+  width: 100%
+  min-height: 100vh
+
+.sidebarEmail
+  color: $medium-gray
+  font-size: 14px
+
+#mainContent
+  margin-left: 200px
+  transition: all 1s ease     //TODO toto môže robiť problém
+  width: 100%
+  margin-top: 62px
+
+  @media only screen and (max-width: 767px)
+    margin-left: 0
+
+.hidden
+  margin-left: -200px
+  transition: all 1s ease
+
+.marged
+  margin-left: 0 !important
+
+#mobileSideMenu ul li a, #mainSidebar ul li a
+  border-bottom: 1px solid $light-gray
+  padding: 25px 40px
+  display: inline-block
+  text-align: left
+  width: 100%
+  position: relative
+  color: $primary
+  text-transform: uppercase
+
+#mobileSideMenu ul li a:hover, #mainSidebar ul li a:hover
+  background-color: $primary
+  color: $white
+  font-weight: 700
+  text-decoration: none
+
+#mobileSideMenu ul li a.active, #mainSidebar ul li a.active
+  border-left: 5px solid $primary
+  padding-left: 35px
+
+#mobileSideMenu ul li:last-child, #mainSidebar ul li:last-child
+  border-bottom: none
+
+#hideMainSidebar
+  //position: fixed
+  //bottom: 0
+  //left: 0
+  //color: $dark-blue
+  //text-align: center
+  text-transform: uppercase
+  font-size: 16px
+  cursor: pointer
+  //z-index: 100
+
+#mainSidebarBg
+  background-color: $white
+
+.navbarLogo
+  font-size: 20px
+
+.customWidth
+  @media only screen and (min-width: 768px)
+    width: calc(100% - 200px) !important
+
+.panel
+  background-color: $white
+  box-shadow: 0 1px 15px 1px rgba(90, 90, 90, .08)
+  border-radius: .25rem
+  border: 1px solid rgba(17, 17, 17, 0.125)
+  height: 100%
+
+#projectContentBox, #anyProjectText
+  height: 100%
+
+#panelBox
+  padding-top: 15px
+  @media only screen and (min-width: 1200px)
+    min-height: calc(100vh - 331px)
+
+#hoverMenu
+  padding-left: 10px
+
+/*project*/
+
+#projectTable tr
+  cursor: default
+
+#projectTable
+    td.clickable
+      cursor: pointer
+
+table > tbody > tr.projectCard.open > td.projectMembers > img
+  filter: grayscale(100%) !important
+
+td.Actions a, td.Actions button
+  color: $medium-gray
+  font-size: 18px
+  margin: 5px
+
+td.Actions a.edit:hover
+  color: $primary
+
+td.Actions button.trash:hover
+  color: $red
+
+.progress
+  background-color: $medium-gray
+
+td.projectClient > span.badge, td.projectDeadline > span.badge
+  font-size: 80%
+  padding: .45em .6em
+
+td.projectDeadline > span.badge
+  background: none
+
+td.projectDeadline > span.badge-success
+  color: $success
+  border: 1px solid $success
+
+td.projectDeadline > span.badge-danger
+  color: $danger
+  border: 1px solid $danger
+
+/*modal new project form */
+.formLabel
+  font-size: 9pt
+  font-weight: 700
+
+.required:after
+  content: '*'
+  color: $red
+  margin-left: 2px
+
+.form-control[readonly]
+  background-color: $white
+
+.add-more, .remove
+  color: $white
+  cursor: pointer
+
+.add-more
+  background-color: $primary
+
+.remove
+  background-color: $red
+
+.disabled
+  opacity: .65
+
+/*fixed error X placement*/
+select.form-control.is-invalid
+  background-position: center right calc(.375em + 1rem)
+
+#statBox
+  padding: 0 15px
+  margin: 0 -30px
+
+/* general? */
+
+
+/* TODO: nebrakovať ale spraviť big a small verziu*/
+.btn-circle
+  font-size: 20px
+  line-height: 50px
+  border-radius: 50%
+  text-align: center
+  border: none
+  outline: none !important
+
+//.btn-circle
+//  display: inline-block
+//  margin-bottom: 0
+//  font-weight: 400
+//  text-align: center
+//  white-space: nowrap
+//  vertical-align: middle
+//  background-image: none
+//  border: 1px solid transparent
+
+.cardBox
+  margin: 0 -5px
+
+.cardColumn
+  padding: 0 5px
+  margin-bottom: 10px
+
+.cardColumn > div.card
+  box-shadow: 0 1px 15px 1px rgba(90, 90, 90, .08)
+
+div.middle
+  @media only screen and (max-width: 900px)
+    width: 120px
+  @media only screen and (min-width: 1200px)
+    width: 90px
+  @media only screen and (min-width: 1400px)
+    width: 140px
+
+.projectCardIcon
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, .08)
+  width: 50px
+  height: 50px
+
+/* dashboard */
+
+
+.customWidth.marged
+  .container
+    .row
+      @media only screen and (min-width: 767px)
+        margin-right: -200px
+      .dateBox
+        @media only screen and (min-width: 767px)
+          display: flex
+          justify-content: center
+
+.mainNavbarDashboard
+  transition: all .8s ease
+
+.hideMainNavDashboard
+  top: -62px
+  box-shadow: none
+
+#dashboardBg
+  position: fixed
+  left: 0
+  right: 0
+  z-index: -2
+  background-color: $black
+  height: 100%
+
+#dashboardBg::after
+  top: 0
+  bottom: 0
+  content: ""
+  position: fixed
+  left: 0
+  right: 0
+  z-index: -1
+  background-color: $black
+  background: url('../img/dashboard-bg.jpg') no-repeat center center fixed
+  height: 100%
+  opacity: 0.75
+
+
+.clockBox
+  margin-top: 30px
+  display: flex
+  align-items: center
+  justify-content: center
+  @media only screen and (min-width: 576px)
+    margin-top: 60px
+  @media only screen and (min-width: 767px)
+    height: calc(50vh - 62px)
+    margin-top: 0
+  @media only screen and (min-width: 1200px)
+    height: calc(100vh - 62px)
+    justify-content: left
+    margin-top: 0
+  @media only screen and (max-height: 500px)
+    display: none
+
+svg.clock
+  height: 50vh
+
+.circle-black
+  fill: rgba(0, 0, 0, 0.8)
+
+text
+  fill: $white
+
+.dateBox
+  margin-top: 60px
+  display: flex
+  align-items: center
+  justify-content: center
+  color: $white
+  @media only screen and (min-width: 1200px)
+    height: calc(100vh - 62px)
+    justify-content: right
+    margin-top: 0
+
+#canvas
+  border-radius: 50%
+  width: 300px
+  height: 300px
+  @media only screen and (min-width: 1300px)
+    width: 500px
+    height: 500px
+  @media only screen and (min-width: 576px)
+    width: 400px
+    height: 400px
+
+//tasks
+
+$appbar-height: 40px
+$navbar-height: 50px
+$list-width: 300px
+$gap: 15px
+$gap-list: 10px
+$scrollbar-thickness: 17px
+$list-header-height: 60px
+$list-footer-height: 36px
+// Misc
+$list-border-radius: 8px
+$card-border-radius: 5px
+// Colors
+$board-bg-color: #0079bf
+$appbar-bg-color: #0067a3
+$list-bg-color: #e2e4e6
+
+.expandedHeight
+  height: calc(100vh - 136px) !important
+
+.lists
+  height: calc(100vh - 135px)
+  overflow-x: auto
+  width: 100%
+  padding-bottom: 5px
+
+  .list
+    flex: 0 0 auto
+    margin-left: $gap-list
+    border-radius: $list-border-radius
+
+  @media only screen and (min-width: 768px)
+    height: calc(100vh - 210px)
+    padding-bottom: 10px
+
+.list
+  width: $list-width
+  height: calc(100% - #{$gap})
+  background-color: $list-bg-color
+  position: relative
+
+  .simplebar-content
+    display: block
+
+  .simplebar-resize-wrapper
+    min-height: 100%
+
+  &:first-child
+    margin-left: 0
+
+  .listIcon
+    font-size: 20px
+    cursor: pointer
+
+  .listBox
+    height: calc(100% - #{$list-header-height} - 2*(#{$gap}))
+    margin: $gap 0
+    overflow-y: auto
+    overflow-x: hidden
+    padding: 0 $gap
+  ul
+    margin: 0
+    min-height: 64vh
+    //overflow: hidden
+    li
+      background-color: $white
+      padding: $gap
+      margin-bottom: $gap
+      border-radius: $card-border-radius
+      box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2)
+      &:hover
+        cursor: pointer
+
+
+      &.noTask
+        background-color: transparent
+        border-radius: 0
+        box-shadow: none
+        padding: 0
+
+        .noTaskImg
+          height: 100px
+
+      .taskListStatus
+        font-size: 30px
+
+        .statusDone
+          color: $success
+
+        .statusOverDue
+          color: $red
+
+      .taskListStat
+        color: $medium-gray
+        font-size: 14px
+
+
+header.listHeader
+  height: 60px !important
+  color: $white
+  border-top-left-radius: $list-border-radius
+  border-top-right-radius: $list-border-radius
+
+
+.ui-sortable-helper
+  cursor: grab
+
+
+.slider.slider-horizontal
+  width: 100%
+  .slider-handle
+    background-color: $primary
+    background-image: none
+
+
+
+/* Task modal */
+
+#taskModal, #projectInfoModal
+  a
+    padding: 5px
+    .hover
+      text-decoration: none
+    text-decoration: none
+  a.action
+    margin-top: -10px
+    opacity: 1
+  @media only screen and (min-width: 1200px)
+    a.action
+      opacity: 0
+    section:hover
+      a.action
+        opacity: 1
+
+#taskMainContent
+  @media only screen and (min-width: 992px)
+    border-right: 1px solid $medium-gray
+
+#taskSidebar
+  background-color: $light-gray
+  border-bottom: 1px solid $medium-gray
+  border-bottom-right-radius: .3rem
+  @media only screen and (min-width: 992px)
+    border-bottom: none
+
+
+
+.subTask, .commentBox
+  width: 100%
+  background-color: $light-gray
+  border-radius: 5px
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2)
+
+.completedIcon
+  color: $success
+
+.taskIconInfo
+  padding-right: 5px
+  color: $dark-gray
+
+.overDue
+  color: $red !important
+  font-weight: 700
+
+/*modals*/
+//TODO skôr to spraviť ako classu modal-top?
+#timersModal, #stopTimerModal, #deleteTaskModal, #addAtachementModal, #addMembersModal, #deleteAttachModal, #deleteCommentModal
+  z-index: 1055
+  .modal-content
+    box-shadow: 0 0 20px 10px rgba(0,0,0,0.2)
+
+.modal-header
+  background: $dark-blue
+  color: $white
+  border: none
+
+.close
+  color: $white
+  opacity: 1
+
+  &:hover
+    color: $white
+/*chart*/
+.chartBox
+  width: 100%
+  height: 100%
+  .wrapper
+    box-shadow: 0 1px 15px 1px rgba(90,90,90,0.2)
+    border: 1px solid #f9f9f9
+
+  /*general*/
+
+.table .thead-dark th
+  background-color: $dark-blue
+  border: none
+
+  &:first-child
+    border-top-left-radius: 5px
+  &:last-child
+    border-top-right-radius: 5px
+
+//input type file - change button text
+
+.custom-file-input ~ .custom-file-label::after
+  content: "Zvoliť súbor"
+
+
+// colored checkboxes
+
+.colorBox
+  display: block
+  position: relative
+  padding-left: 35px
+  margin-bottom: 12px
+  cursor: pointer
+  font-size: 22px
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+
+
+
+.colorBox input
+  position: relative
+  opacity: 0
+  cursor: pointer
+  height: 0
+  width: 0
+
+
+/* Create a custom checkbox */
+.checkmark
+  position: absolute
+  top: 0
+  left: 0
+  height: 25px
+  width: 25px
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after
+  content: ""
+  position: absolute
+  display: none
+
+
+/* Show the checkmark when checked */
+.colorBox input:checked ~ .checkmark:after
+  display: block
+
+
+/* Style the checkmark/indicator */
+.colorBox .checkmark:after
+  left: 9px
+  top: 5px
+  width: 5px
+  height: 10px
+  border: solid white
+  border-width: 0 3px 3px 0
+  -webkit-transform: rotate(45deg)
+  -ms-transform: rotate(45deg)
+  transform: rotate(45deg)
+
+textarea
+  overflow: hidden
+
+.modal
+  overflow-y: auto!important
+
+.progress
+  font-size: 10px
+
+.bootstrap-select>.dropdown-toggle.bs-placeholder, .bootstrap-select>.dropdown-toggle.bs-placeholder:active, .bootstrap-select>.dropdown-toggle.bs-placeholder:focus, .bootstrap-select>.dropdown-toggle.bs-placeholder:hover
+  color: $white
+
+.bootstrap-select .dropdown-toggle:focus, .bootstrap-select>select.mobile-device:focus+.dropdown-toggle
+  outline-color: $white
+
+
+.overLoad
+  border: 3px solid #e54141

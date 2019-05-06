@@ -1,0 +1,26 @@
+AddDefaultCharset UTF-8
+
+#ERROR PAGE REDIRECTION
+
+ErrorDocument 400 /TaskMag/build/public_html/404.php
+ErrorDocument 401 /TaskMag/build/public_html/404.php
+ErrorDocument 403 /TaskMag/build/public_html/404.php
+ErrorDocument 404 /TaskMag/build/public_html/404.php
+ErrorDocument 500 /TaskMag/build/public_html/404.php
+ErrorDocument 502 /TaskMag/build/public_html/404.php
+ErrorDocument 504 /TaskMag/build/public_html/404.php
+
+
+#<IfModule mod_rewrite.c>
+##Turn Rewrite Engine On
+#RewriteEngine On
+#
+##rewrite extension .php to none
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{REQUEST_FILENAME}\.php -f
+##RewriteRule ^task-board/([0-9]+) task-board.php?project=$1 [L,NC]
+#
+##RewriteRule ^(.+)$ $1.php [L,QSA]
+#
+#</IfModule>
+

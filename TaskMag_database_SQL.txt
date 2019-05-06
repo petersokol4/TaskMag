@@ -1,0 +1,306 @@
+﻿create table attachements
+(
+	id_attachements int auto_increment
+		primary key,
+	task_id int not null,
+	project_id int not null,
+	attach_name varchar(50) not null,
+	attach_name_orig varchar(100) not null,
+	attach_dir varchar(50) not null,
+	upload_time timestamp not null,
+	uploaded_by int not null
+)
+engine=InnoDB
+;
+
+create index task_id
+	on attachements (task_id)
+;
+
+create index project_id
+	on attachements (project_id)
+;
+
+create index uploaded_by
+	on attachements (uploaded_by)
+;
+
+create table columns
+(
+	id_columns int auto_increment
+		primary key,
+	column_title varchar(100) not null,
+	column_color varchar(20) not null,
+	column_limit int not null,
+	project_id int not null,
+	column_created timestamp not null
+)
+engine=InnoDB
+;
+
+create index project_id
+	on columns (project_id)
+;
+
+create table comments
+(
+	id_comments int auto_increment
+		primary key,
+	task_id int not null,
+	project_id int not null,
+	comment_content varchar(800) not null,
+	created_by int not null,
+	created_time timestamp not null
+)
+engine=InnoDB
+;
+
+create index task_id
+	on comments (task_id)
+;
+
+create index project_id
+	on comments (project_id)
+;
+
+create index created_by
+	on comments (created_by)
+;
+
+create table invitations
+(
+	id_invitations int auto_increment
+		primary key,
+	email varchar(50) not null,
+	project_id int not null,
+	invitation_token varchar(64) not null,
+	send_at timestamp not null
+)
+engine=InnoDB
+;
+
+create index project_id
+	on invitations (project_id)
+;
+
+create table projects
+(
+	id int auto_increment
+		primary key,
+	project_client varchar(50) not null,
+	project_name varchar(50) not null,
+	project_description varchar(400) not null,
+	project_status varchar(20) not null,
+	project_category varchar(20) not null,
+	project_start timestamp not null,
+	project_end timestamp not null,
+	create_time timestamp not null,
+	project_author int not null,
+	project_directory varchar(50) not null
+)
+engine=InnoDB
+;
+
+create index project_author
+	on projects (project_author)
+;
+
+alter table attachements
+	add constraint attachements_ibfk_1
+		foreign key (project_id) references projects (id)
+			on delete cascade
+;
+
+alter table columns
+	add constraint columns_ibfk_1
+		foreign key (project_id) references projects (id)
+			on delete cascade
+;
+
+alter table comments
+	add constraint comments_ibfk_2
+		foreign key (project_id) references projects (id)
+			on delete cascade
+;
+
+alter table invitations
+	add constraint invitations_ibfk_1
+		foreign key (project_id) references projects (id)
+			on delete cascade
+;
+
+create table projects_users
+(
+	id_pu int auto_increment
+		primary key,
+	project_id int not null,
+	user_id int not null,
+	user_role int not null,
+	assign_time timestamp not null,
+	constraint projects_users_ibfk_2
+		foreign key (project_id) references projects (id)
+			on delete cascade
+)
+engine=InnoDB
+;
+
+create index project_id
+	on projects_users (project_id)
+;
+
+create index user_id
+	on projects_users (user_id)
+;
+
+create table tasks
+(
+	id_tasks int auto_increment
+		primary key,
+	task_name varchar(50) not null,
+	task_description varchar(400) not null,
+	task_created timestamp not null,
+	task_created_by int not null,
+	task_started timestamp null,
+	task_completed timestamp null,
+	task_due_date timestamp not null,
+	task_priority tinyint not null,
+	task_status tinyint(1) default '0' not null,
+	project_id int not null,
+	column_id int null,
+	task_position int null,
+	constraint tasks_ibfk_1
+		foreign key (project_id) references projects (id)
+			on delete cascade,
+	constraint tasks_ibfk_3
+		foreign key (column_id) references columns (id_columns)
+			on delete cascade
+)
+engine=InnoDB
+;
+
+create index task_created_by
+	on tasks (task_created_by)
+;
+
+create index project_id
+	on tasks (project_id)
+;
+
+create index column_id
+	on tasks (column_id)
+;
+
+alter table attachements
+	add constraint attachements_ibfk_2
+		foreign key (task_id) references tasks (id_tasks)
+			on delete cascade
+;
+
+alter table comments
+	add constraint comments_ibfk_1
+		foreign key (task_id) references tasks (id_tasks)
+			on delete cascade
+;
+
+create table tasks_users
+(
+	id_tu int auto_increment
+		primary key,
+	task_id int not null,
+	user_id int not null,
+	user_role int not null,
+	assign_time timestamp not null,
+	constraint tasks_users_ibfk_2
+		foreign key (task_id) references tasks (id_tasks)
+			on delete cascade
+)
+engine=InnoDB
+;
+
+create index task_id
+	on tasks_users (task_id)
+;
+
+create index user_id
+	on tasks_users (user_id)
+;
+
+create table timers
+(
+	id_timers int auto_increment
+		primary key,
+	project_id int not null,
+	timer_start timestamp not null,
+	timer_stop timestamp null,
+	timer_finished tinyint(1) default '0' not null,
+	timer_description varchar(400) null,
+	created_by int not null,
+	constraint timers_ibfk_3
+		foreign key (project_id) references projects (id)
+			on delete cascade
+)
+engine=InnoDB
+;
+
+create index project_id
+	on timers (project_id)
+;
+
+create index created_by
+	on timers (created_by)
+;
+
+create table users
+(
+	id_users int auto_increment
+		primary key,
+	user_name varchar(50) not null,
+	user_avatar varchar(50) default '64656661756c74.jpg' not null,
+	user_about varchar(400) null,
+	user_email varchar(50) not null,
+	user_pass varbinary(255) not null,
+	user_pass_changed timestamp null,
+	user_type enum('A', 'U') default 'U' not null,
+	user_confirmed bit default b'0' not null,
+	user_pass_token varchar(100) null,
+	user_pass_token_created timestamp null,
+	user_created timestamp not null,
+	user_activate_token varchar(100) null,
+	user_activate_token_created timestamp null,
+	user_last_login timestamp null
+)
+engine=InnoDB
+;
+
+alter table attachements
+	add constraint attachements_ibfk_3
+		foreign key (uploaded_by) references users (id_users)
+;
+
+alter table comments
+	add constraint comments_ibfk_3
+		foreign key (created_by) references users (id_users)
+;
+
+alter table projects
+	add constraint projects_ibfk_1
+		foreign key (project_author) references users (id_users)
+;
+
+alter table projects_users
+	add constraint projects_users_ibfk_1
+		foreign key (user_id) references users (id_users)
+			on delete cascade
+;
+
+alter table tasks
+	add constraint tasks_ibfk_2
+		foreign key (task_created_by) references users (id_users)
+;
+
+alter table tasks_users
+	add constraint tasks_users_ibfk_1
+		foreign key (user_id) references users (id_users)
+			on delete cascade
+;
+

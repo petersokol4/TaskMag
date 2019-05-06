@@ -1,65 +1,137 @@
 //	Headings
 
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,900')
+html
+  font-family: 'Roboto', sans-serif
 
-.gigantic, .huge, .large, .bigger, .big,
+.jumbo, .header, .subheader, .title, .subtitle,
 h1, h2, h3, h4, h5, h6
-  color: #222
-  font-weight: bold
   font-family: 'Roboto', sans-serif
   font-weight: 900
   text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07)
 
-.gigantic
-  font-size: 110px
-  line-height: 1.09
-  letter-spacing: -2px
+.jumbo, h1
+  font-size: 50pt
+  line-height: 55pt
+  @media only screen and (max-width: 991px)
+    font-size: 42pt
+    line-height: 46pt
+  @media only screen and (max-width: 575px)
+    font-size: 36pt
+    line-height: 40pt
 
-.huge, h1
-  font-size: 68px
-  line-height: 1.05
-  @media only screen and (max-width: 680px)
-    font-size: 44px
+.header, h2
+  font-size: 37pt
+  line-height: 44pt
+  @media only screen and (max-width: 991px)
+    font-size: 34pt
+    line-height: 40pt
+  @media only screen and (max-width: 575px)
+    font-size: 30pt
+    line-height: 36pt
 
-.large, h2
-  font-size: 42px
-  line-height: 1.14
-  @media only screen and (max-width: 680px)
-    font-size: 32px
+.subheader, h3
+  font-size: 34pt
+  line-height: 40pt
+  font-weight: 700
+  @media only screen and (max-width: 991px)
+    font-size: 32pt
+    line-height: 38pt
+  @media only screen and (max-width: 575px)
+    font-size: 28pt
+    line-height: 34pt
 
-.bigger, h3
-  font-size: 26px
-  line-height: 1.38
-  @media only screen and (max-width: 680px)
-    font-size: 22px
+.title, h4
+  font-size: 28pt
+  line-height: 33pt
+  font-weight: 700
+  @media only screen and (max-width: 991px)
+    font-size: 26pt
+    line-height: 31pt
+  @media only screen and (max-width: 575px)
+    font-size: 24pt
+    line-height: 28pt
 
-.big, h4
-  font-size: 22px
-  line-height: 1.38
-  @media only screen and (max-width: 680px)
-    font-size: 18px
+.subtitle, h5
+  font-size: 21pt
+  line-height: 25pt
+  font-weight: 400
+  @media only screen and (max-width: 991px)
+    font-size: 20pt
+    line-height: 24pt
+  @media only screen and (max-width: 575px)
+    font-size: 18pt
+    line-height: 21pt
 
-.small, small
-  font-size: 10px
-  line-height: 1.2
+.small
+  font-size: 13pt
+  line-height: 20pt
+  @media only screen and (max-width: 991px)
+    font-size: 12pt
+    line-height: 18pt
+  @media only screen and (max-width: 575px)
+    font-size: 11pt
+    line-height: 16pt
+
+small
+  font-size: 14px
+  line-height: 20px
+  @media only screen and (max-width: 991px)
+    font-size: 12px
+    line-height: 18px
+  @media only screen and (max-width: 575px)
+    font-size: 11px
+    line-height: 16px
 
 
 // Basic Text Style
 
 p
   margin: 0 0 20px 0
+p, body
   font-weight: 400
-  font-size: 14px
+  font-size: 16px
+  line-height: 24px
+  @media only screen and (max-width: 991px)
+    font-size: 15px
+    line-height: 22px
+  @media only screen and (max-width: 575px)
+    font-size: 14px
+    line-height: 21px
 
 em
   font-style: italic
 
 strong
-  font-weight: bold
+  font-weight: 700
 
 hr
-  border: solid #ddd
+  border: solid $hr
   border-width: 1px 0 0
   clear: both
   margin: 10px 0 30px
   height: 0
+
+.thin
+  font-weight: 300
+
+
+/*?????*/
+
+.statIcon
+  width: 54px
+  height: 54px
+  border-radius: 2px
+  background-color: $primary
+  margin-top: 20px
+  margin-left: 15px
+  line-height: 54px
+  font-size: 28px
+  font-weight: 700
+  color: $white
+
+.media-body
+  margin: 28px 10px 24px 16px
+
+.media-body h6
+  font-size: 14px
+  color: $dark-gray

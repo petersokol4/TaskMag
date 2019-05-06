@@ -1,27 +1,46 @@
-.button,
-button,
+.button, .btn,
 input[type="submit"],
 input[type="reset"],
 input[type="button"]
   display: inline-block
-  padding: 20px 60px
-  color: black
+  padding: 10px 20px
+  color: $white
   text-align: center
-  font-size: 14px
+  font-size: 16px
   font-weight: 600
+  line-height: 24px
+  @media only screen and (max-width: 991px)
+    font-size: 15px
+    line-height: 22px
+  @media only screen and (max-width: 575px)
+    font-size: 14px
+    line-height: 21px
   text-transform: uppercase
   text-decoration: none
   white-space: nowrap
-  background-color: white
+  background-color: $primary
   border-radius: 4px
   cursor: pointer
   box-sizing: border-box
   transition: all 0.2s ease
+  outline: none
+  border: none
 
   &:hover,
   &:active,
   &:focus
-
     outline: 0
-    transform: scale(1.01)
     transform: translateY(3px)
+    color: $white
+
+.btn
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24)
+
+.btn:hover
+  background-color: $secondary
+
+.btnReset
+  background: none
+  color:  #babcbe
+  border: none
+
