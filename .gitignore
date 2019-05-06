@@ -183,9 +183,4 @@ $RECYCLE.BIN/
 # Project Config File
 build/resources/config/config.php
 
-# uploads folder
-build/public_html/uploads/projects/*
-build/public_html/uploads/users/*
-
-
 # End of https://www.gitignore.io/api/node,sass,windows,phpstorm
